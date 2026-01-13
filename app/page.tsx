@@ -112,6 +112,13 @@ export default function Home() {
     return 'bg-red-400';
   };
 
+  const foundingBenefits = [
+    { icon: '💎', title: '50% Off Premium Forever', desc: 'Locked in for life, even as prices increase' },
+    { icon: '⭐', title: 'Founding Member Badge', desc: 'Exclusive badge on your profile' },
+    { icon: '🚀', title: 'Early Feature Access', desc: 'Test new features weeks before public release' },
+    { icon: '🗳️', title: 'Shape the Product', desc: 'Vote on what we build next' },
+  ];
+
   return (
     <div className="font-serif bg-gradient-to-b from-[#FAF7F2] to-[#F5F0E8] min-h-screen text-[#2C2420]">
       {/* Grain overlay */}
@@ -236,6 +243,71 @@ export default function Home() {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founding Member Benefits */}
+      <section className="bg-gradient-to-b from-[#2C2420] to-[#1a1614] py-16 sm:py-24 px-4 sm:px-8">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-12">
+            <p className="font-sans text-sm font-semibold tracking-[0.15em] text-[#D4A574] mb-4 uppercase">
+              Limited Time Offer
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-4">
+              Become a <span className="italic text-[#D4A574]">Founding Member</span>
+            </h2>
+            <p className="font-sans text-base sm:text-lg text-[#8C8279] max-w-[600px] mx-auto">
+              Join now and lock in exclusive benefits that will never be offered again.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
+            {foundingBenefits.map((benefit, i) => (
+              <div 
+                key={i}
+                className="bg-white/5 backdrop-blur border border-[#D4A574]/20 rounded-2xl p-6 hover:bg-white/10 hover:border-[#D4A574]/40 transition-all"
+              >
+                <span className="text-3xl mb-4 block">{benefit.icon}</span>
+                <h3 className="font-sans text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+                <p className="font-sans text-sm text-[#8C8279]">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+          
+          {/* CTA in benefits section */}
+          <div className="text-center">
+            {!isSubmitted ? (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px] mx-auto">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="font-sans flex-1 px-5 py-4 text-base border border-[#D4A574]/30 rounded-lg bg-white/10 text-white placeholder-[#8C8279] outline-none focus:border-[#D4A574] transition-colors"
+                  required
+                />
+                <button 
+                  type="submit"
+                  style={{ backgroundColor: '#D4A574' }}
+                  className="font-sans px-8 py-4 text-base font-semibold text-[#2C2420] rounded-lg hover:-translate-y-0.5 hover:shadow-xl transition-all whitespace-nowrap shadow-lg"
+                >
+                  Claim Your Spot
+                </button>
+              </form>
+            ) : (
+              <div className="font-sans p-5 bg-[#D4A574]/20 rounded-lg max-w-[480px] mx-auto border border-[#D4A574]/30">
+                <p className="font-semibold text-[#D4A574] mb-1">
+                  You&apos;re a Founding Member! 🎉
+                </p>
+                <p className="text-sm text-[#8C8279]">
+                  We&apos;ll be in touch with your exclusive benefits.
+                </p>
+              </div>
+            )}
+            <p className="font-sans mt-4 text-sm text-[#5C524C]">
+              Limited spots available • Benefits locked in forever
+            </p>
           </div>
         </div>
       </section>
@@ -453,8 +525,8 @@ export default function Home() {
             <span className="italic text-[#722F37]">smarter?</span>
           </h2>
           <p className="font-sans text-base sm:text-lg text-[#5C524C] mb-8 sm:mb-10 leading-relaxed">
-            Join thousands of dyners who&apos;ve stopped refreshing and started eating. 
-            Launching in NYC first—be among the first to get access.
+            Join as a Founding Member and lock in exclusive benefits forever. 
+            Be first in line when we launch.
           </p>
           
           {!isSubmitted ? (
