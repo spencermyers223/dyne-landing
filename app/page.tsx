@@ -165,7 +165,7 @@ export default function Home() {
                 type="submit"
                 className="font-sans px-8 py-4 text-base font-semibold text-white bg-gradient-to-br from-[#722F37] to-[#8B3A44] rounded-lg hover:-translate-y-0.5 hover:shadow-xl transition-all whitespace-nowrap shadow-lg shadow-[#722F37]/30"
               >
-                Join Waitlist
+                Claim Your Spot
               </button>
             </form>
           ) : (
@@ -262,7 +262,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {foundingBenefits.map((benefit, i) => (
               <div 
                 key={i}
@@ -273,41 +273,6 @@ export default function Home() {
                 <p className="font-sans text-sm text-[#8C8279]">{benefit.desc}</p>
               </div>
             ))}
-          </div>
-          
-          {/* CTA in benefits section */}
-          <div className="text-center">
-            {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-[480px] mx-auto">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="font-sans flex-1 px-5 py-4 text-base border border-[#D4A574]/30 rounded-lg bg-white/10 text-white placeholder-[#8C8279] outline-none focus:border-[#D4A574] transition-colors"
-                  required
-                />
-                <button 
-                  type="submit"
-                  style={{ backgroundColor: '#D4A574' }}
-                  className="font-sans px-8 py-4 text-base font-semibold text-[#2C2420] rounded-lg hover:-translate-y-0.5 hover:shadow-xl transition-all whitespace-nowrap shadow-lg"
-                >
-                  Claim Your Spot
-                </button>
-              </form>
-            ) : (
-              <div className="font-sans p-5 bg-[#D4A574]/20 rounded-lg max-w-[480px] mx-auto border border-[#D4A574]/30">
-                <p className="font-semibold text-[#D4A574] mb-1">
-                  You&apos;re a Founding Member! 🎉
-                </p>
-                <p className="text-sm text-[#8C8279]">
-                  We&apos;ll be in touch with your exclusive benefits.
-                </p>
-              </div>
-            )}
-            <p className="font-sans mt-4 text-sm text-[#5C524C]">
-              Limited spots available • Benefits locked in forever
-            </p>
           </div>
         </div>
       </section>
@@ -544,7 +509,7 @@ export default function Home() {
                 style={{ backgroundColor: '#722F37' }}
                 className="font-sans px-8 py-4 text-base font-semibold text-white rounded-lg hover:-translate-y-0.5 hover:shadow-xl transition-all whitespace-nowrap shadow-lg"
               >
-                Get Early Access
+                Claim Your Spot
               </button>
             </form>
           ) : (
