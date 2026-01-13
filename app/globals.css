@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-dm-sans: 'DM Sans', -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-cormorant);
+}
+
+.font-serif {
+  font-family: var(--font-cormorant);
+}
+
+.font-sans {
+  font-family: var(--font-dm-sans);
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+input:focus {
+  outline: none;
+  border-color: #722F37;
+}
+
+/* Selection color */
+::selection {
+  background-color: #722F37;
+  color: white;
+}
