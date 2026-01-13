@@ -173,7 +173,7 @@ export default function Home() {
           )}
           
           <p className="font-sans mt-4 text-sm text-[#8C8279]">
-            Launching in NYC • 2,400+ already on the waitlist
+            Pre-launch • Founding members lock in 50% off Premium for life
           </p>
         </div>
         
